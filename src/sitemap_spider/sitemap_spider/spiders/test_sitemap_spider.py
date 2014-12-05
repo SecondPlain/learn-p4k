@@ -4,6 +4,7 @@
 #
 #
 import scrapy
+import re
 from scrapy.contrib.spiders import SitemapSpider
 from scrapy.selector import Selector
 
@@ -13,6 +14,7 @@ class P4K_SitemapSpider(SitemapSpider):
 
     #parse this particular album review and write the paragraph contents to a file
     sitemap_rules = [('/19982-diarrhea-planet-aliens-in-the-outfield-ep/', 'parse_and_save')]
+
 
 
     def parse_and_save(self, response):
@@ -30,11 +32,25 @@ class P4K_SitemapSpider(SitemapSpider):
         # then stores the second last entry of the above list in the variable
         # called 'filename', and added the format .txt to it
         filename = response.url.split("/")[-2] + ".txt"
+        text = (response.selector.xpath('//div [@class="editorial"]').extract().__str__());
+
+        #replace u2014 with --
+        text = text.replace("u2014","--");
+
+        #remove characters from the start and end of text
+        text = text.replace("[u\'", "")
+        text = text.replace("\']", "")
+
+        #find tags and remove them
+        text = re.sub('<[^>]*>', '', text)
+        
+        #remove all escape characters
+        text = text.replace("\\", "");
         
         # Now we open a file with the new name and write the paragraph content 
         # to that file. Also converts the list object to a string
         with open(filename, 'wb') as f:
-            f.write((response.selector.xpath('//p/text()').extract()).__str__())
+            f.write(text);
 
         # The XML file we're working with has a nonstandard namespace -- you
         # can see it if you open up the file 'sitemap-album-reviews.xml' in 
