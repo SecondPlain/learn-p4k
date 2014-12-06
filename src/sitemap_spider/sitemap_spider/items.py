@@ -9,13 +9,13 @@ import scrapy
 
 
 class P4KSitemapItem(scrapy.Item):
-    artist = scrapy.field()     # Album artist
-    title = scrapy.field()      # Album title
-    label = scrapy.field()      # Record label
-    year = scrapy.field()       # Release year (or year of reissue)
-    author = scrapy.field()     # Author of review
-    score = scrapy.field()      # Score (0.0 - 10.0)
-    is_bnm = scrapy.field()     # Best new music? (boolean)
-    date = scrapy.field()       # Review date
-    review = scrapy.field()     # Review content
+    artist = scrapy.Field()     # Album artist
+    title = scrapy.Field()      # Album title
+    label = scrapy.Field()      # Record label
+    year = scrapy.Field()       # Release year (or year of reissue)
+    author = scrapy.Field()     # Author of review
+    score = scrapy.Field()      # Score (0.0 - 10.0)
+    is_bnm = scrapy.Field()     # Best new music? (boolean)
+    date = scrapy.Field()       # Review date
+    review = scrapy.Field()     # Review content
     pass
