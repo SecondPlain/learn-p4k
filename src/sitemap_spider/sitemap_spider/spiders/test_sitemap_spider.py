@@ -1,5 +1,5 @@
 #
-# sitemap_spider.py
+# test_sitemap_spider.py
 #   teset spider class for crawling Pitchfork's sitemap(using scrapy) and storing one album review in a file
 #
 #
@@ -56,6 +56,8 @@ class P4K_SitemapSpider(SitemapSpider):
         # to that file. Also converts the list object to a string
         with open(filename, 'wb') as f:
             f.write(review);
+
+        ###########################
 
         #extract info inside <div class="info">
         divs = response.selector.xpath('//div [@class="info"]')
