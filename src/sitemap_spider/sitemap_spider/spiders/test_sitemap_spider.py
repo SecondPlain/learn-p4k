@@ -18,7 +18,9 @@ class P4K_SitemapSpider(SitemapSpider):
     #sitemap_rules = [('/19982-diarrhea-planet-aliens-in-the-outfield-ep/', 'parse_and_save')]
     sitemap_rules = [('/20021-andy-stott-faith-in-strangers/', 'parse_and_save')]
 
-
+    def clean (self, string):
+        string = string.replace("u2014","--")
+    
     def parse_and_save(self, response):
         """ 
         The contents of this method tell the spider what to do with the data it
@@ -37,7 +39,8 @@ class P4K_SitemapSpider(SitemapSpider):
         review = (response.selector.xpath('//div [@class="editorial"]').extract().__str__());
 
         #replace special characters with appropriate substitutions
-        review = review.replace("u2014","--");
+        #review = review.replace("u2014","--");
+        self.clean(review)
         review = review.replace("u2013","-");
         review = review.replace("xa0", " ");
         review = review.replace("u2019", "'");
@@ -50,7 +53,9 @@ class P4K_SitemapSpider(SitemapSpider):
         review = re.sub('<[^>]*>', '', review)
         
         #remove all escape characters
-        review = review.replace("\\", "");
+        review = review.replace("\\", "")
+        
+        print review
         
         # Now we open a file with the new name and write the paragraph content 
         # to that file. Also converts the list object to a string
@@ -109,7 +114,7 @@ class P4K_SitemapSpider(SitemapSpider):
         author = re.sub('<[^>]*>', '', author)
         #remove the publication date after the semicolon
         author = re.sub(';.*', '', author)
-        author = author.replace("By ", "")
+        author = author.replace(" By ", "")
         author = author.__str__()
 
         ###########################
@@ -140,7 +145,7 @@ class P4K_SitemapSpider(SitemapSpider):
         ###########################
 
         item = P4KSitemapItem()
-        item['review'] = review
+        item['review'] = review.replace("\\","")
         item['title'] = title
         item['artist'] = artist
         item['score'] = score

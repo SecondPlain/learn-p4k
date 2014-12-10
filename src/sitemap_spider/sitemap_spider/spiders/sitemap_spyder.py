@@ -13,6 +13,9 @@ class P4K_SitemapSpider(SitemapSpider):
     name = "sitemap"
     sitemap_urls = ['http://www.pitchfork.com/sitemap-album-reviews.xml']
 
+    
+    
+    
     def parse(self,response):
          
         # A response is a scrapy object (class). One of its members is
@@ -39,7 +42,9 @@ class P4K_SitemapSpider(SitemapSpider):
         review = re.sub('<[^>]*>', '', review)
         
         #remove all escape characters
-        review = review.replace("\\", "");
+        review = review.replace("\\", "")
+        review = review.replace("\\\'", "")
+        review = review.replace("\\\"", "")
 
         ###########################
 
@@ -93,7 +98,7 @@ class P4K_SitemapSpider(SitemapSpider):
         author = re.sub('<[^>]*>', '', author)
         #remove the publication date after the semicolon
         author = re.sub(';.*', '', author)
-        author = author.replace("By ", "")
+        author = author.replace(" By ", "")
         author = author.__str__()
 
         ###########################
