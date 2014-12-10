@@ -19,7 +19,26 @@ class P4K_SitemapSpider(SitemapSpider):
     sitemap_rules = [('/20021-andy-stott-faith-in-strangers/', 'parse_and_save')]
 
     def clean (self, string):
-        string = string.replace("u2014","--")
+        
+        #replace special characters with appropriate substitutions
+        string = string.replace("u2014"," -- ")
+        string = string.replace("u2013","-")
+        string = string.replace("xa0", " ")
+        string = string.replace("u2019", "'")
+        string = string.replace("xe9", "e")
+        string = string.replace("u2018", "'")
+        
+        #find tags and remove them
+        string = re.sub('<[^>]*>', '', string)        
+        
+        #remove characters from the start and end of review
+        string = string.replace("[u\' ", "")
+        string = string.replace("\']", "")
+        
+        #remove all escape characters
+        string = string.replace("\\", "")        
+        
+        return string
     
     def parse_and_save(self, response):
         """ 
@@ -38,22 +57,8 @@ class P4K_SitemapSpider(SitemapSpider):
         filename = response.url.split("/")[-2] + ".txt"
         review = (response.selector.xpath('//div [@class="editorial"]').extract().__str__());
 
-        #replace special characters with appropriate substitutions
-        #review = review.replace("u2014","--");
-        self.clean(review)
-        review = review.replace("u2013","-");
-        review = review.replace("xa0", " ");
-        review = review.replace("u2019", "'");
-
-        #remove characters from the start and end of text
-        review = review.replace("[u\'", "")
-        review = review.replace("\']", "")
-
-        #find tags and remove them
-        review = re.sub('<[^>]*>', '', review)
-        
-        #remove all escape characters
-        review = review.replace("\\", "")
+        #clean the contents of the review
+        review = self.clean(review)
         
         print review
         
@@ -73,22 +78,25 @@ class P4K_SitemapSpider(SitemapSpider):
         #extract the first <h2> tags inside divs
         title =  ((divs.xpath('.//h2')).extract())[0]
         #remove tags from title
-        title = re.sub('<[^>]*>', '', title)
+        #title = re.sub('<[^>]*>', '', title)
         title = title.__str__()
+        title = self.clean(title)
 
         ###########################
         
         #find the artist
         artist =  ((divs.xpath('.//h1')).extract())[0]
-        artist = re.sub('<[^>]*>', '', artist)
+        #artist = re.sub('<[^>]*>', '', artist)
         artist = artist.__str__()
+        artist = self.clean(artist)
 
         ###########################
 
         #find the score
         score = ((divs.xpath('.//span')).extract())[1]
-        score = re.sub('<[^>]*>', '', score)
+        #score = re.sub('<[^>]*>', '', score)
         score = score.__str__()
+        score = self.clean(score)
 
         ###########################
 
@@ -104,6 +112,7 @@ class P4K_SitemapSpider(SitemapSpider):
         bnm = re.sub('<[^>]*>', '', bnm)
         if (bnm == " Best New Music "):
             is_bnm = True
+            
         else:
             is_bnm = False
 
