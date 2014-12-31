@@ -15,7 +15,7 @@ class P4KSitemapItem(scrapy.Item):
     year = scrapy.Field()       # Release year (or year of reissue)
     author = scrapy.Field()     # Author of review
     score = scrapy.Field()      # Score (0.0 - 10.0)
-    is_bnm = scrapy.Field()     # Best new music? (boolean)
+    bnm_label = scrapy.Field()  # Best new music label
     date = scrapy.Field()       # Review date
     review = scrapy.Field()     # Review content
     pass
