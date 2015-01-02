@@ -2,7 +2,7 @@
 # sitemap_spider.py
 #   Spider class for crawling Pitchfork's sitemap(using scrapy) 
 #
-#
+
 import scrapy
 import re
 from scrapy.contrib.spiders import SitemapSpider
@@ -28,50 +28,43 @@ class P4K_SitemapSpider(SitemapSpider):
         divs = response.selector.xpath('//div [@class="info"]')
 
         # Grab review parameters that are of interest to us. These are unicode
-        # objects. Elements of item_list are:
-        #  0. review
-        #  1. title
-        #  2. artist
-        #  3. score
-        #  4. bnm_label
-        #  5. author
-        #  6. date
-        #  7. label
-        #  8. year
-        item_list1 = []
-        item_list1.append(response.selector.xpath('//div [@class="editorial"]').extract()[0])
-        item_list1.append(divs.xpath('.//h2').extract()[0])
-        item_list1.append(divs.xpath('.//h1').extract()[0])
-        item_list1.append(divs.xpath('.//span').extract()[1])
-        item_list1.append(divs.xpath('.//div [@class="bnm-label"]').extract()[0])
-        item_list1 += divs.xpath('.//h4').extract()[0].split('; ')
-        item_list1 += divs.xpath('.//h3').extract()[0].split('; ')
+        # objects. Elements of cur_items are:
+        #   0. review
+        #   1. title
+        #   2. artist
+        #   3. score
+        #   4. bnm_label
+        #   5. author
+        #   6. date
+        #   7. label
+        #   8. year
+        cur_items = []
+        cur_items.append(response.selector.xpath('//div [@class="editorial"]').extract()[0])
+        cur_items.append(divs.xpath('.//h2').extract()[0])
+        cur_items.append(divs.xpath('.//h1').extract()[0])
+        cur_items.append(divs.xpath('.//span').extract()[1])
+        cur_items.append(divs.xpath('.//div [@class="bnm-label"]').extract()[0])
+        cur_items += divs.xpath('.//h4').extract()[0].split('; ')
+        cur_items += divs.xpath('.//h3').extract()[0].split('; ')
         
-        # Remove tags, convert to unicode string, strip whitespace
-        item_list = []
-        for item in item_list1:
-            item = item.encode('utf-8')
-            item = re.sub('<[^>]*>', '', item)
-            item = item.strip()
-            item_list.append(item)
+        # Remove tags, strip whitespace
+        for i in range(len(cur_items)):
+            cur_items[i] = re.sub('<[^>]*>', '', cur_items[i])
+            cur_items[i] = cur_items[i].strip()
 
         # Load items
         item = P4KSitemapItem()
-        item['review'] = item_list[0]
-        item['title'] = item_list[1] 
-        item['artist'] = item_list[2] 
-        item['score'] = float(item_list[3])              # Convert score to float
-        item['bnm_label'] = item_list[4] 
-        item['author'] = item_list[5].replace('By ', '') # Only save author's name
-        item['date'] = item_list[6] 
-        item['label'] = item_list[7] 
-        item['year'] = int(item_list[8])                 # Convert year to integer
-
-        # For debug
-#        inspect_response(response)
+        item['review'] = cur_items[0]
+        item['title'] = cur_items[1]
+        item['artist'] = cur_items[2].split(' / ')      # An album can have multiple artists
+        item['score'] = cur_items[3]
+        item['bnm_label'] = cur_items[4] 
+        item['author'] = cur_items[5].replace('By ', '') # Only save author's name
+        item['date'] = cur_items[6]
+        item['label'] = cur_items[7]
+        item['year'] = cur_items[8].split('/')          # Album can be reissued
 
         yield item
         
         pass
-
 

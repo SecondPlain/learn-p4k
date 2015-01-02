@@ -12,6 +12,7 @@ BOT_NAME = 'sitemap_spider'
 
 SPIDER_MODULES = ['sitemap_spider.spiders']
 NEWSPIDER_MODULE = 'sitemap_spider.spiders'
+ITEM_PIPELINES = ['sitemap_spider.pipelines.JsonUnicode']
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'sitemap_spider (+http://www.yourdomain.com)'
