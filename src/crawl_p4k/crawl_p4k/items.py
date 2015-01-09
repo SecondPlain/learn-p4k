@@ -7,8 +7,7 @@
 
 import scrapy
 
-
-class P4KSitemapItem(scrapy.Item):
+class P4kSpiderItem(scrapy.Item):
     artist = scrapy.Field()     # Album artist
     title = scrapy.Field()      # Album title
     label = scrapy.Field()      # Record label

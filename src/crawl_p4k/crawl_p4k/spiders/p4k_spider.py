@@ -1,18 +1,17 @@
 #
-# sitemap_spider.py
+# p4k_spider.py
 #   Spider class for crawling Pitchfork's sitemap(using scrapy) 
 #
 
-import scrapy
 import re
+import scrapy
 from scrapy.contrib.spiders import SitemapSpider
 from scrapy.selector import Selector
-from sitemap_spider.items import P4KSitemapItem
-from scrapy.shell import inspect_response
+from crawl_p4k.items import P4kSpiderItem
 
-class P4K_SitemapSpider(SitemapSpider):
+class P4kSpider(SitemapSpider):
     
-    name = "sitemap"
+    name = "p4k"
     sitemap_urls = ['http://www.pitchfork.com/sitemap-album-reviews.xml']
 
     def parse(self,response):
@@ -53,7 +52,7 @@ class P4K_SitemapSpider(SitemapSpider):
             cur_items[i] = cur_items[i].strip()
 
         # Load items
-        item = P4KSitemapItem()
+        item = P4kSpiderItem()
         item['review'] = cur_items[0]
         item['title'] = cur_items[1]
         item['artist'] = cur_items[2].split(' / ')      # An album can have multiple artists

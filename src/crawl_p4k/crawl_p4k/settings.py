@@ -8,11 +8,11 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #
 
-BOT_NAME = 'sitemap_spider'
+BOT_NAME = 'crawl_p4k'
 
-SPIDER_MODULES = ['sitemap_spider.spiders']
-NEWSPIDER_MODULE = 'sitemap_spider.spiders'
-ITEM_PIPELINES = ['sitemap_spider.pipelines.JsonUnicode']
+SPIDER_MODULES = ['crawl_p4k.spiders']
+NEWSPIDER_MODULE = 'crawl_p4k.spiders'
+ITEM_PIPELINES = ['crawl_p4k.pipelines.JsonUnicode']
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'sitemap_spider (+http://www.yourdomain.com)'
+#USER_AGENT = 'crawl_p4k (+http://www.yourdomain.com)'
