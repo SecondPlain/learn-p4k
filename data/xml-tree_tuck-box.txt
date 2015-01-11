@@ -1,0 +1,152 @@
+<div id="main">
+  <ul class="review-meta">
+    <li data-pk="19988">
+      <div class="artwork"> <img src="http://cdn3.pitchfork.com/albums/19988/homepage_large.e713d859.jpg" /> </div>
+      <div class="info">
+        <h1><a href="/artists/1143-nick-drake/">Nick Drake</a></h1>
+        <h2>Tuck Box</h2>
+        <h3> Island; 2014 </h3>
+        <h4> By <a href="/staff/jayson-greene/"><address>Jayson Greene</address></a>; <span class="pub-date">January 22, 2014</span> </h4>
+        <span class="score bnm score-8-5"> 8.5 </span>
+        <div class="bnm-label"> Best New Reissue </div>
+        <ul class="outbound">
+          <li class="last">
+            <h1>Find it at:</h1>
+              <a href="http://www.insound.com/catalogsearch/result/?q=Nick%20Drake%3A%20Tuck%20Box&order=relevance&dir=desc" rel="nofollow" target="_blank" class="first">Insound</a>
+              <a href="http://www.amazon.com/s/?url=search-alias%3Daps&tag=p4kalbrevs-20&field-keywords=Nick%20Drake%3A%20Tuck%20Box" rel="nofollow" target="_blank" class="last">Amazon MP3 &amp; CD</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li data-pk="20159">
+      <div class="artwork"> <img src="http://cdn4.pitchfork.com/albums/20159/homepage_large.b3fb1bb7.jpg" /> </div>
+      <div class="info">
+        <h1><a href="/artists/1143-nick-drake/">Nick Drake</a></h1>
+        <h2>Five Leaves Left</h2>
+        <h3> Island; 1969/2014 </h3>
+        <h4> By <a href="/staff/jayson-greene/"><address>Jayson Greene</address></a>; <span class="pub-date">January 22, 2014</span> </h4>
+        <span class="score score-9-5"> 9.5 </span>
+        <div class="bnm-label"> </div>
+        <ul class="outbound">
+          <li class="last">
+            <h1>Find it at:</h1>
+              <a href="http://www.insound.com/catalogsearch/result/?q=Nick%20Drake%3A%20Tuck%20Box&order=relevance&dir=desc" rel="nofollow" target="_blank" class="first">Insound</a>
+              <a href="http://www.amazon.com/s/?url=search-alias%3Daps&tag=p4kalbrevs-20&field-keywords=Nick%20Drake%3A%20Tuck%20Box" rel="nofollow" target="_blank" class="last">Amazon MP3 &amp; CD</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li data-pk="20160">
+      <div class="artwork"> <img src="http://cdn3.pitchfork.com/albums/20160/homepage_large.0ba31ab7.jpg" /> </div>
+      <div class="info">
+        <h1><a href="/artists/1143-nick-drake/">Nick Drake</a></h1>
+        <h2>Bryter Layter</h2>
+        <h3> Island; 1970/2014 </h3>
+        <h4> By <a href="/staff/jayson-greene/"><address>Jayson Greene</address></a>; <span class="pub-date">January 22, 2014</span> </h4>
+        <span class="score score-9-7"> 9.7 </span>
+        <div class="bnm-label"> </div>
+        <ul class="outbound">
+          <li class="last">
+            <h1>Find it at:</h1>
+              <a href="http://www.insound.com/catalogsearch/result/?q=Nick%20Drake%3A%20Tuck%20Box&order=relevance&dir=desc" rel="nofollow" target="_blank" class="first">Insound</a>
+              <a href="http://www.amazon.com/s/?url=search-alias%3Daps&tag=p4kalbrevs-20&field-keywords=Nick%20Drake%3A%20Tuck%20Box" rel="nofollow" target="_blank" class="last">Amazon MP3 &amp; CD</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li data-pk="20162">
+      <div class="artwork"> <img src="http://cdn4.pitchfork.com/albums/20162/homepage_large.2adb7f41.jpg" /> </div>
+      <div class="info">
+        <h1><a href="/artists/1143-nick-drake/">Nick Drake</a></h1>
+        <h2>Pink Moon</h2>
+        <h3> Island; 1972/2014 </h3>
+        <h4> By <a href="/staff/jayson-greene/"><address>Jayson Greene</address></a>; <span class="pub-date">January 22, 2014</span> </h4>
+        <span class="score score-10-0"> 10.0 </span>
+        <div class="bnm-label"> </div>
+        <ul class="outbound">
+          <li class="last">
+            <h1>Find it at:</h1>
+              <a href="http://www.insound.com/catalogsearch/result/?q=Nick%20Drake%3A%20Tuck%20Box&order=relevance&dir=desc" rel="nofollow" target="_blank" class="first">Insound</a>
+              <a href="http://www.amazon.com/s/?url=search-alias%3Daps&tag=p4kalbrevs-20&field-keywords=Nick%20Drake%3A%20Tuck%20Box" rel="nofollow" target="_blank" class="last">Amazon MP3 &amp; CD</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li data-pk="20163">
+      <div class="artwork"> <img src="http://cdn2.pitchfork.com/albums/20163/homepage_large.56a3fc53.jpg" /> </div>
+      <div class="info">
+        <h1><a href="/artists/1143-nick-drake/">Nick Drake</a></h1>
+        <h2>Family Tree</h2>
+        <h3> Island; 2007/2014 </h3>
+        <h4> By <a href="/staff/jayson-greene/"><address>Jayson Greene</address></a>; <span class="pub-date">January 22, 2014</span> </h4>
+        <span class="score score-7-1"> 7.1 </span>
+        <div class="bnm-label"> </div>
+        <ul class="outbound">
+          <li class="last">
+            <h1>Find it at:</h1>
+              <a href="http://www.insound.com/catalogsearch/result/?q=Nick%20Drake%3A%20Tuck%20Box&order=relevance&dir=desc" rel="nofollow" target="_blank" class="first">Insound</a>
+              <a href="http://www.amazon.com/s/?url=search-alias%3Daps&tag=p4kalbrevs-20&field-keywords=Nick%20Drake%3A%20Tuck%20Box" rel="nofollow" target="_blank" class="last">Amazon MP3 &amp; CD</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li data-pk="20164">
+      <div class="artwork"> <img src="http://cdn3.pitchfork.com/albums/20164/homepage_large.0a55a1cd.jpg" /> </div>
+      <div class="info">
+        <h1><a href="/artists/1143-nick-drake/">Nick Drake</a></h1>
+        <h2>Made to Love Magic</h2>
+        <h3> Island; 2004/2014 </h3>
+        <h4> By <a href="/staff/jayson-greene/"><address>Jayson Greene</address></a>; <span class="pub-date">January 22, 2014</span> </h4>
+        <span class="score score-6-7"> 6.7 </span>
+        <div class="bnm-label"> </div>
+        <ul class="outbound">
+          <li class="last">
+            <h1>Find it at:</h1>
+              <a href="http://www.insound.com/catalogsearch/result/?q=Nick%20Drake%3A%20Tuck%20Box&order=relevance&dir=desc" rel="nofollow" target="_blank" class="first">Insound</a>
+              <a href="http://www.amazon.com/s/?url=search-alias%3Daps&tag=p4kalbrevs-20&field-keywords=Nick%20Drake%3A%20Tuck%20Box" rel="nofollow" target="_blank" class="last">Amazon MP3 &amp; CD</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  <ul class="review-multi">
+    <li class="first outbound">
+      <div id="social-httppitchforkcomreviewsalbums18793" class="social-deferred">
+        <div class="lazy" data-content=" &lt;script class=&quot;social&quot; type=&quot;text/javascript&quot;&gt; $(function() { p4k.ui.social( &#39;social-httppitchforkcomreviewsalbums18793&#39;, &#39;Nick Drake: Tuck Box&#39;, &#39;http://pitchfork.com/reviews/albums/18793\u002Dnick\u002Ddrake\u002Dtuck\u002Dbox/&#39;); }); &lt;/script&gt; "></div>
+      </div>
+    </li>
+    <li class="last">
+      <ul class="album-list">
+        <li data-pk="19988" class="first ">
+          <div class="artwork"> <img src="http://cdn3.pitchfork.com/albums/19988/list.e713d859.jpg" /> </div>
+          <div class="info bnm"> 8.5 </div>
+        </li>
+        <li data-pk="20159" class=" ">
+          <div class="artwork"> <img src="http://cdn4.pitchfork.com/albums/20159/list.b3fb1bb7.jpg" /> </div>
+          <div class="info "> 9.5 </div>
+        </li>
+        <li data-pk="20160" class=" ">
+          <div class="artwork"> <img src="http://cdn2.pitchfork.com/albums/20160/list.0ba31ab7.jpg" /> </div>
+          <div class="info "> 9.7 </div>
+        </li>
+        <li data-pk="20162" class=" ">
+          <div class="artwork"> <img src="http://cdn2.pitchfork.com/albums/20162/list.2adb7f41.jpg" /> </div>
+          <div class="info "> 10 </div>
+        </li>
+        <li data-pk="20163" class=" ">
+          <div class="artwork"> <img src="http://cdn4.pitchfork.com/albums/20163/list.56a3fc53.jpg" /> </div>
+          <div class="info "> 7.1 </div>
+        </li>
+        <li data-pk="20164" class=" last">
+          <div class="artwork"> <img src="http://cdn3.pitchfork.com/albums/20164/list.0a55a1cd.jpg" /> </div>
+          <div class="info "> 6.7 </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="object-detail">
+    <div class="editorial">
+      <p dir="ltr"><a href="http://pitchfork.com/artists/1143-nick-drake/" target="_blank">Nick Drake</a> did not lead a colorful life.  Shy, abstracted, and bad with eye contact, he shuttled quietly from boarding school to prep school to Cambridge and made few friends along the way. The most rebellious act of his youth was a note politely informing his tutor he was leaving school. His musical career was a disaster, but not a funny or entertaining one—his albums were simply ignored and audiences talked obliviously through his live gigs. He moved back home, fell into a deep depression, and one night, either by accident or on purpose, took too many pills. When he died, there was almost nothing to feel good about.</p> <p dir="ltr">This has proved a difficult predicament for the record labels charged with profiting off his legacy. The posthumous marketing of Nick Drake's music has been arduous and fitful, a decades-long attempt at setting right what everyone agreed went horribly wrong the first time. First there was 1979's overpriced <i>Fruit Tree</i> box, which bombed. Then came the slightly more successful 1985 best-of <i>Heaven in a Wild Flower</i> and 1986’s <i>Time of No Reply</i>,  a collection of rare and officially unreleased tracks. His cult profile rose modestly through the 90s, but it wasn’t until 2000, when “Pink Moon” famously found its way into <a href="http://www.youtube.com/watch?v=BIOW9fLT9eY" target="_blank" rel="nofollow">a Cabrio commercial</a>, that Nick Drake's fortune as a "penniless genius" finally received its uplifting footnote. Since then, there has been a flurry of release activity, all of it packaging the same tiny body of work spanning six years. Nick Drake is finally famous, but it took the record industry 40 years to figure out how to make it happen.</p> <p dir="ltr">It's worth revisiting this dubious history while considering<i> Tuck Box, </i>the latest and possibly final repackaging. Alongside his three studio albums—<i>Five Leaves Left</i>, <i>Bryter Layter</i>, and <i>Pink Moon—</i>this boxed set includes the 2004 compilation <a href="http://pitchfork.com/reviews/albums/2445-made-to-love-magic/" target="_blank"><i>Made to Love Magic</i></a>, (itself a barely altered repackaging of <i>Time of No Reply</i>) as well as <a href="http://pitchfork.com/reviews/albums/10391-family-tree/" target="_blank"><i>Family Tree</i>,</a> a 2007 collection of Nick Drake's home recordings with a few short, haunting songs by his mother, the folk singer and poet Molly. There is not a single second of new or unreleased music waiting for you inside this handsomely designed object, in other words; the packaging, which replicates the wooden box that Nick Drake’s mother used to send him cakes in while he was at Marlborough College, is the sole original flourish.</p> <p dir="ltr">What <i>Tuck Box</i> offers, then, is simply another chance to revisit Nick Drake's short, sad story. Because Drake died in desolation and obscurity, and because his music grows more influential every year, there will never quite be a <i>bad</i> moment to rediscover him. His three studio albums have settled into cultural totems, albums that anyone hoping to know something about rock history buys sooner or later. Even 40-odd years later, their thumbprint remains unique, a strange and compelling mix of timeless poetic melancholy on the one hand, and cloistered, pampered schoolboy modernity on the other. They sit completely to the left of all rock music, which Drake could care less about; his version of a garage band was a group of boys at his boarding school, one of whom was the grand-nephew of John Maynard Keynes. (Their name was the Perfumed Gardeners.)</p> <p dir="ltr">Drake was influenced instead by British folk royalty like John Martyn and Bert Jansch, or Ashley Hutchings of the Fairport Convention. When he recorded his debut, 1969’s <b><i>Five Leaves Left</i></b>, he must have felt, at least momentarily, that he was joining their ranks. It was Hutchings who had enthusiastically approached Drake in local pub The Roundhouse, offering to pass his information along to the legendary manager Joe Boyd. Drake's entrance into the business, at least, was effortless and auspicious, and he was joined in the Sound Techniques recording studio by a few of his personal heroes. The warm, rounded upright bass playing is from Danny Thompson, a founding member of the Pentangle. Richard Thompson plays the pearly guitar leads. Listening to “Time Has Told Me”, the first song on his debut album, is to hear to what might very well be the happiest and most fulfilling moment of Nick Drake’s professional life.</p> <p dir="ltr">Even as a 20-year-old, Drake's vision for his music was strikingly assured. He was nervous, fumbling, and difficult to engage in conversation in the studio, but he knew what he wanted. He calmly insisted that Boyd and John Wood hire arranger Robert Kirby, a fellow student at Cambridge. Bewildered, they obeyed, and were rewarded with the breathtaking string chart for “Way to Blue”. With its clean lines and grave elegance, "Way to Blue" suggests the philosophy that would distinguish Nick Drake’s music over the years and damn it during his lifetime: in Joe Boyd’s words, it simply  “was not reaching out to you." Drake was painfully English, and showiness wasn’t really in his nature. But profundity glowed from his music.</p> <p dir="ltr">This approach extends to his guitar playing, which was so obsessively perfect it almost escapes comprehension. You will never hear a single string buzz. It's not the sort of virtuosity that quiets a chattering crowd, but once you've attuned to the absolute silence, it quickly grows otherworldly. Even on densely packed fingerpicking runs like "Day Is Done", each note sits in the mix like a stone at the floor of a clear pond. He was a frighteningly flawless player, in a way that served to magnify his incorporeality: There is no surviving video of Nick Drake playing live or talking. He died in 1974, but his physicality is as remote to our modern imagination as Gustav Mahler's.</p> <p dir="ltr">His concerns were similarly otherworldly and timeless, informed by a childhood of English Romantic poets. The futility of knowing the mind of another was a persistent theme in his lyrics, which looked right past people to stars, trees, eternity. “Who can know the thoughts of Mary Jane?” Drake muses. “Who can know the reason for her smile?” His music viewed human behavior and its peculiarities with quizzical detachment, even when the case study is Drake himself: “So I'll leave the ways that are making me be/ What I really don't want to be,”, he sings on "Time Has Told Me". Sizing up the enormity of this task, examining how it might be accomplished—these were not really his philosophical concerns. They overwhelmed him or they simply didn’t interest him, but either way, they came to trip him up, as they do us all.</p> <p dir="ltr">When it was released in the fall of 1969, <i>Five Leaves Left</i> went unnoticed. Island Records had done it no favors. The packaging was insultingly botched; two songs—"Day Is Done” and “Way To Blue”—were switched in the tracklisting and “Three Hours” was mistakenly titled “Sundown”. But Drake was also complicit; he began his first ill-fated tour behind the faltering album, and between songs, he would tune his guitar for minutes on end to stony, uncomfortable silence. He often walked off dejected before finishing his set. He disappeared into dope smoke, a predilection that was slowly hardening into a crutch. He blew off radio sessions and interviews and slowly began retreating into himself. It was under these circumstances that he ventured back into the studio for <b><i>Bryter Layter</i></b>, his second full-length.</p> <p dir="ltr">Ironically, it was initially conceived as his "up" album, a poppy rejoinder to <i>Five Leaves Left</i>. <i>Five Leaves</i> was pastoral, written in the wooded confines of Cambridge. <i>Layter</i> was written in London, and was meant to reflect urbanity. It did, but only from the perspective of Drake's one bloodshot eye, peering out cautiously at the world. Over woolly saxophone on "At the Chime of a City Clock", he confesses "I stay indoors beneath the floors and talk with neighbors only/ The games you play make people say you're either weird or lonely". Over the peppy horn charts of "Hazey Jane II", Drake sings lightly of how it feels "when the world it gets so crowded that you can't look out the window in the morning." The city, on <i>Bryter Layter</i>, is one long harsh unpleasant noise occurring outside. Nothing good or stimulating seems to happen there.</p> <p dir="ltr">The music, however, is brighter—this is the Nick Drake you can hear reflected in latter-period <a href="http://pitchfork.com/artists/324-belle-and-sebastian/" target="_blank">Belle and Sebastian</a>. He rehearsed with a band for the first time, including other members of Fairport Convention, and the result is the most fulsome studio recording he ever managed. Some of the arrangement decisions remain bewildering—the gospel backup vocals, jazz-comping guitar and noodling piano crowding the space on "Poor Boy" remain as jarring now as they were when the album was released. On "Fly" and "Northern Sky", Drake worked with <a href="http://pitchfork.com/artists/649-john-cale/" target="_blank">John Cale</a>, and you can hear a more natural dynamic in their collaboration. It's either a shame or a relief they didn't work together longer: "Fly" and "Northern Sky"are the two most affecting songs on <i>Bryter</i>, but it's also likely Cale introduced Drake to heroin.</p> <p dir="ltr">On <b><i>Pink Moon</i></b>, Nick Drake’s final official album, there is one single overdub: the piano part drifting over the title track. The rest is just Drake, his pristine, eerily perfect playing, his mumbling, and silence. <i>Bryter</i> had also sold poorly and received near-zero notices—the most favorable review compared it to "Classical Gas". By now, he hardly spoke to anyone; in between takes, John Wood remembers, Drake betrayed neither pleasure or displeasure. He simply sat. Keith Morris, the photographer who shot the album's photography, remarked that working with Drake was "like working with still life." The album was recorded in two evenings, by his bewildered crew, who were uncertain of what they were even making. When Drake was finished, he dropped the manila package, almost without a word, at Island Records.</p> <p dir="ltr">A "pink moon" is a baleful symbol, a sign of impending death or calamity. On "Pink Moon", it's "gonna get ye all." On paper, this sentiment reads like vindictive rage, but on record, it sounds contemplative. Drake's voice never conveyed palpable anger or sadness; he had a slight, gentle voice and upper-class accent, the product of his upbringing, clipped and clean, and his guitar, as always, rang out with a crystalline purity. His music is so consoling that the darkness at its heart is not always accessible. It's almost impossible to hear the emotional abandon in <i>Pink Moon</i>, then, without the taste of his first two albums lingering on your mouth. It's only then that the bone-dry resonance of the guitars registers as slightly alarming, and the backdrop of silence suggests both the purity of Drake's vision and also something darker: like someone who has dropped out of the world, mumbling prophecies.</p> <p dir="ltr">On "Place to Be", he remembers his youth only as a time he "didn't see the truth hanging from the door"; now, he is "weaker than the palest blue." "Know" consists of just four lines—"You know that I love you/ You know I don't care/ You know that I see you/ You know I'm not there." It sounds like a back-and-forth between Drake and the world at large. There is a stillness to Nick Drake's music that bewitches anyone who gets near enough, and <i>Pink Moon</i> is its purest expression. It remains the Nick Drake record most people begin with, and for good reason.</p> <p dir="ltr">The eleven songs on <i>Pink Moon</i> were not Nick Drake's final recordings, however. In the last year of his life, he would return to the studio, his fingernails long, his hair dirty, his clothes in shambles, to cut beginning tracks for what would have been his fourth album. They went poorly. Joe Boyd recalls that Drake, the flawless technician, was no longer able to play and sing at the same time, so the sessions limped agonizingly while he fumbled through guitar takes and then returned to sing, shakily. These four songs—"Black Eyed Dog", "Rider on the Wheel", "Tow the Line", and "Hanging on a Star"—are the only truly discomfiting records he ever made. On "Black Eyed Dog", he sang tremulously over some hammered harmonics about growing old and wanting to go home. Within four months, he was dead.</p> <p dir="ltr">The most consequential material on <b><i>Made to Love Magic</i> </b>remain these final tracks. The sundry unreleased tracks, such as the hallucinatory “Clothes of Sand” and the odd, jaunty “Mayfair", are interesting but inessential. The rest of the album is the usual posthumous footnotes tumble: A version of "River Man" recorded when Drake was still at college; a scrapped version of "Three Days" from the tentative early sessions of <i>Five Leaves Left</i>; an early alternate take of "Thoughts of Mary Jane", with distracted, noodly lead guitar playing from Richard Thompson. There are a handful of performances from Drake's first-ever public concert, the so-called "work tape" from his college days. They don't do much to enrich the Nick Drake story.  </p> <p dir="ltr"><b><i>Family Tree</i></b>, though, is odder and more interesting. The album, which was only released in 2007, compiles all the known existing home recordings of Nick Drake—music he recorded at his parents' house for fun or to kill time; rehearsals of Mozart trios with his aunt and uncle (he played clarinet). The 28 tracks consist largely of covers and traditionals, including a run through "All My Trials", sung with his sister Gabrielle.</p> <p dir="ltr"><i>Family Tree</i> doesn’t give the world any classic lost Nick Drake music, but it does give the sensation, achieved with a little effort, of what it might have been like to sit in the Drakes' parlor in Far Leys. You can hear the actual clink of actual tea cups in the background of his cover of <a href="http://pitchfork.com/artists/1177-bob-dylan/" target="_blank">Bob Dylan</a>'s "Tomorrow Is a Long Time". You get to hear Nick Drake messing about on guitar, which sounds better than anyone else's. His version of "Cocaine Blues" is enjoyable  both because it's a looser and bluesier Nick Drake than we're used to, and also because of his pronunciation of "cocaine," which suggests a side of finger sandwiches.</p> <p dir="ltr"><i>Family Tree</i> also includes two of his mother's haunting, intriguingly wayward songs. "Poor Mum" makes for an odd companion with her son's "Poor Boy"; "Joy as it flies cannot be caught", she sings, searchingly, her voice climbing into a breath-catching question mark. There is an unmistakable hint of the fatalism that trailed her son's music in these recordings, and in "Do You Ever Remember", she sings lines that could lead directly into "Time Has Told Me": "Time was ever a vagabond/ Time was always a thief/ Time can steal away happiness/ But time can take away grief."</p> <p>This was Nick Drake's existential dilemma: He would rather ponder time than observe the present, would sooner gaze into the sea than engage with the people around him. School friends recall conversations about spirits and "the little people" as the only times they saw him animated. The rage he directed at his producer Joe Boyd for his failed career on "Hanging on a Star" ("Why leave me hanging on a star/ When you deem me so high"?) was in part the sound of someone realizing that their worldly woes have slowly blotted out their view of the stars, perhaps forever. "I could have been a signpost, could've been a clock," he mused on "One of These Things First"; this is the sentiment of someone who barely assented to the burdens of being a person. For such a soul, there can never be such a thing as a career. There can only be a legacy.</p>
+    </div>
+  </div>
+</div>

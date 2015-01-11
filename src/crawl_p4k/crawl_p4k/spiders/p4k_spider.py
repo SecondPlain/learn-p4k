@@ -1,6 +1,6 @@
 #
 # p4k_spider.py
-#   Spider class for crawling Pitchfork's sitemap(using scrapy) 
+#   Spider class for crawling Pitchfork's sitemap (using scrapy) 
 #
 
 import re
@@ -13,55 +13,68 @@ class P4kSpider(SitemapSpider):
     
     name = "p4k"
     sitemap_urls = ['http://www.pitchfork.com/sitemap-album-reviews.xml']
+    #sitemap_urls = ['file:///home/jonathan/repo/learn-p4k/data/sitemap-test.xml']
 
     def parse(self,response):
 
-        # The XML file we're working with has a nonstandard namespace -- you
-        # can see it if you open up the file 'sitemap-album-reviews.xml' in 
-        # directory src/crawl_p4k/ after running this spider. If we remove the
-        # namespace, we can refer to the XML tags in the way you see in the
-        # tutorial.
-        response.selector.remove_namespaces()
-        
-        # <div class="info"> holds most of the review's meta-data
-        divs = response.selector.xpath('//div [@class="info"]')
-
-        # Grab review parameters that are of interest to us. These are unicode
-        # objects. Elements of cur_items are:
-        #   0. review
-        #   1. title
-        #   2. artist
-        #   3. score
-        #   4. bnm_label
-        #   5. author
-        #   6. date
-        #   7. label
-        #   8. year
-        cur_items = []
-        cur_items.append(response.selector.xpath('//div [@class="editorial"]').extract()[0])
-        cur_items.append(divs.xpath('.//h2').extract()[0])
-        cur_items.append(divs.xpath('.//h1').extract()[0])
-        cur_items.append(divs.xpath('.//span').extract()[1])
-        cur_items.append(divs.xpath('.//div [@class="bnm-label"]').extract()[0])
-        cur_items += divs.xpath('.//h4').extract()[0].split('; ')
-        cur_items += divs.xpath('.//h3').extract()[0].split('; ')
-        
-        # Remove tags, strip whitespace
-        for i in range(len(cur_items)):
-            cur_items[i] = re.sub('<[^>]*>', '', cur_items[i])
-            cur_items[i] = cur_items[i].strip()
-
-        # Load items
         item = P4kSpiderItem()
-        item['review'] = cur_items[0]
-        item['title'] = cur_items[1]
-        item['artist'] = cur_items[2].split(' / ')      # An album can have multiple artists
-        item['score'] = cur_items[3]
-        item['bnm_label'] = cur_items[4] 
-        item['author'] = cur_items[5].replace('By ', '') # Only save author's name
-        item['date'] = cur_items[6]
-        item['label'] = cur_items[7]
-        item['year'] = cur_items[8].split('/')          # Album can be reissued
+
+        # Get review
+        data = response.selector.xpath('//div [@id="main"]/div [@class="object-detail"]/div [@class="editorial"]')
+        item['review'] = data.extract()
+
+        # Get review meta-data
+        meta = response.selector.xpath('//div [@id="main"]/ul [@class="review-meta"]')
+        item['title'] = meta.xpath('.//div [@class="info"]/h2').extract()
+        item['artist'] = meta.xpath('.//div [@class="info"]/h1').extract()
+        item['score'] = meta.xpath('.//div [@class="info"]/span').extract()
+        item['bnm_label'] = meta.xpath('.//div [@class="info"]/div [@class="bnm-label"]').extract()
+        # Next part is tricky...
+        authors_and_dates = meta.xpath('.//div [@class="info"]/h4').extract()
+        item['author'] = []
+        item['date'] = []
+        for entry in authors_and_dates:
+            author, date = entry.replace('&amp;', '&').split('; ')
+            item['author'].append(author)
+            item['date'].append(date)
+        labels_and_years = meta.xpath('.//div [@class="info"]/h3').extract()
+        item['label'] = []
+        item['year'] = []
+        for entry in labels_and_years:
+            label, year = entry.replace('&amp;', '&').split('; ')
+            item['label'].append(label)
+            item['year'].append(year)
+        
+        # Remove tags, strip whitespace, fix ampersand characters
+        for key in item.keys():
+            for i in range(len(item[key])):
+                item[key][i] = re.sub('<[^>]*>', '', item[key][i])
+                item[key][i] = item[key][i].strip()
+                item[key][i] = item[key][i].replace('&amp;', '&')
+
+        # Only save author's name
+        for i in range(len(item['author'])):
+            item['author'][i] = item['author'][i].replace('By ', '')
+
+#        # Debug
+#        from scrapy.shell import inspect_response
+#        inspect_response(response)
+
+#        # Albums can have multiple artists, can be released by multiple labels,
+#        # and can be (re)issued in multiple years. Pitchfork delimits metadata
+#        # for multiple artists and labels with ' / ', but delimits multiple
+#        # release years with just '/'.
+#        keys = ('artist', 'label', 'year')
+#        delims = (' / ', ' / ', '/')
+#        for i in range(len(keys)):
+#            expanded_list = []
+#            for cur_item in item[keys[i]]:
+#               expanded_list.append(cur_item.split(delims[i]))
+#            item[keys[i]] = expanded_list
+#
+#        # Convert score and release year to numeric types
+#        item['score'] = float(item['score'])
+#        item['year'] = map(int, item['year'])
 
         yield item
         

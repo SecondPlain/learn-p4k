@@ -13,6 +13,7 @@ BOT_NAME = 'crawl_p4k'
 SPIDER_MODULES = ['crawl_p4k.spiders']
 NEWSPIDER_MODULE = 'crawl_p4k.spiders'
 ITEM_PIPELINES = ['crawl_p4k.pipelines.JsonUnicode']
+LOG_LEVEL = 'INFO'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'crawl_p4k (+http://www.yourdomain.com)'
