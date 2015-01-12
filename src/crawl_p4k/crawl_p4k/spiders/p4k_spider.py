@@ -13,6 +13,8 @@ class P4kSpider(SitemapSpider):
     
     name = "p4k"
     sitemap_urls = ['http://www.pitchfork.com/sitemap-album-reviews.xml']
+    
+    # Smaller sitemap for debugging
     #sitemap_urls = ['file:///home/jonathan/repo/learn-p4k/data/sitemap-test.xml']
 
     def parse(self,response):
@@ -29,7 +31,11 @@ class P4kSpider(SitemapSpider):
         item['artist'] = meta.xpath('.//div [@class="info"]/h1').extract()
         item['score'] = meta.xpath('.//div [@class="info"]/span').extract()
         item['bnm_label'] = meta.xpath('.//div [@class="info"]/div [@class="bnm-label"]').extract()
-        # Next part is tricky...
+        # Author/date and label/year metadata are stored in the same xml tag,
+        # so we have to separate them by splitting on '; '. BUT, some authors
+        # and labels contain an ampersand character (denoted in HTML as
+        # '&amp;'), which can throw off the split. So first fix ampersands by
+        # removing the 'amp;'
         authors_and_dates = meta.xpath('.//div [@class="info"]/h4').extract()
         item['author'] = []
         item['date'] = []
@@ -59,22 +65,6 @@ class P4kSpider(SitemapSpider):
 #        # Debug
 #        from scrapy.shell import inspect_response
 #        inspect_response(response)
-
-#        # Albums can have multiple artists, can be released by multiple labels,
-#        # and can be (re)issued in multiple years. Pitchfork delimits metadata
-#        # for multiple artists and labels with ' / ', but delimits multiple
-#        # release years with just '/'.
-#        keys = ('artist', 'label', 'year')
-#        delims = (' / ', ' / ', '/')
-#        for i in range(len(keys)):
-#            expanded_list = []
-#            for cur_item in item[keys[i]]:
-#               expanded_list.append(cur_item.split(delims[i]))
-#            item[keys[i]] = expanded_list
-#
-#        # Convert score and release year to numeric types
-#        item['score'] = float(item['score'])
-#        item['year'] = map(int, item['year'])
 
         yield item
         
