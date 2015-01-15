@@ -22,7 +22,7 @@ class JsonUnicode(object):
 
     def __init__(self):
         # Open the file and write a [
-        corpus_dir = '/home/jonathan/repo/learn-p4k/data/p4k/'
+        corpus_dir = '/users/kathleen/learn-p4k/data/'
         self.filehandle = codecs.open(corpus_dir + 'p4k-all.json', 'w', encoding='utf-8')
         self.filehandle.write('[')
         self.is_first_item = True

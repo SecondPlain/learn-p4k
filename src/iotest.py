@@ -23,8 +23,8 @@ import operator
 #   bnm_label: Best New Music/Reissue label.
 #   date: Date of review, of format Month Day, Year
 #   review: Review text.
-p4k_dir = '/home/jonathan/repo/learn-p4k/data/p4k/'
-p4k_file = open(p4k_dir + 'p4k-all.json')
+p4k_dir = '/users/kathleen/learn-p4k/data/'
+p4k_file = open(p4k_dir + 'p4k-all.json', encoding="utf8")
 p4k_data = json.load(p4k_file)
 
 # Extract score, caculate average score per record label
@@ -73,7 +73,7 @@ for i in range(100):
     top_label_scores[cur_label] = avg_label_scores[cur_label]    
 best_scores = sorted(top_label_scores.items(), key=operator.itemgetter(1))
 best_scores.reverse()   # sorted is ascending by default
-print '100 most-reviewed labels, ranked by average score:'
+print ( '100 most-reviewed labels, ranked by average score:')
 for i in range(100):
     cur_label, cur_score = best_scores[i]
     out_str = '{0:.3}\t{1}'.format(cur_score, cur_label)

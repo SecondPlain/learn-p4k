@@ -14,7 +14,8 @@ class P4kSpider(SitemapSpider):
     name = "p4k"
     sitemap_urls = ['http://www.pitchfork.com/sitemap-album-reviews.xml']
     #sitemap_urls = ['file:///home/jonathan/repo/learn-p4k/data/sitemap-test.xml']
-
+    #sitemap_rules = [('/20078-black-messiah/','parse')]
+                     
     def parse(self,response):
 
         item = P4kSpiderItem()
