@@ -11,6 +11,9 @@ from collections import defaultdict
 import operator
 import re
 import random
+from sklearn.feature_extraction.text import HashingVectorizer
+from sklearn import svm
+from sklearn.svm import LinearSVC
 
 # Load pitchfork review corpus as a list of dictionaries
 # Each list entry is a dictionary with the following keys (all values are 
@@ -24,33 +27,35 @@ import random
 #   bnm_label: Best New Music/Reissue label.
 #   date: Date of review, of format Month Day, Year
 #   review: Review text.
-p4k_dir = '/users/kathleen/learn-p4k/data/'
-p4k_file = open(p4k_dir + 'p4k-all.json', encoding="utf8")
+p4k_dir = '/home/kathleenkusworo/learn-p4k/data/'
+p4k_file = open(p4k_dir + 'p4k-all.json')
 p4k_data = json.load(p4k_file)
 
 test_dev_int = []
 train_int = []
 train = []
+train_score = []
 test_int = []
 dev_int = []
 test = []
 dev = []
 
+'''
 # Read in review and all meta-data
 for i in range(len(p4k_data)):    
     
     cur_item = p4k_data[i]
 
     #replace dashesa and periods in reviews with empty spaces, then split by space
-    cur_review = cur_item["review"][0].replace("-"," ").replace("."," ").split(" ")
+    #cur_review = cur_item["review"][0].replace("-"," ").replace("."," ").split(" ")
 
     #go through the list of words and remove any non-alphanumeric characters
-    for j in range(len(cur_review)):
-        cur_review[j] = re.sub(r'\W+', '', cur_review[j])
+    #for j in range(len(cur_review)):
+    #    cur_review[j] = re.sub(r'\W+', '', cur_review[j])
 
     #remove any resulting empty strings
-    while '' in cur_review:
-        cur_review.remove('')   
+    #while '' in cur_review:
+    #    cur_review.remove('')   
 
     #assign the formatted review back to p4k_data
     p4k_data[i]["review"] = cur_review
@@ -61,6 +66,8 @@ for i in range(len(p4k_data)):
     cur_scores = cur_item["score"]
     cur_bnm_labels = cur_item["bnm_label"]
     cur_dates = cur_item["date"]
+    
+'''
 
 #pick ~5361 unique integers randomly from 0-16082
 test_dev_int = random.sample(range(len(p4k_data)), int(len(p4k_data)/3))
@@ -83,11 +90,27 @@ for i in range(len(test_int)):
 
 #assign corpus items that are numbered as the integers in dev_int into dev
 for i in range(len(dev_int)):
-    dev.append(p4k_data[dev_int[i]])
+    cur_item = p4k_data[dev_int[i]]   
+    dev.append(cur_item["review"][0])
 
-#assign corpus items that are numbered as the integers in train_int into train
+#assign reviews of corpus items that are numbered as the integers in train_int into train
 for i in range(len(train_int)):
-    train.append(p4k_data[train_int[i]])
+    #current item is the item in p4k_data numbered as those selected to be in train set
+    cur_item = p4k_data[train_int[i]]   
+    train.append(cur_item["review"][0])
+    scores = cur_item["score"]
+    for j in range(len(scores)):
+        scores[j] = float(scores[j])
+    train_score.append(np.mean(scores))
+
+#mean = np.average(train_score)
+
+vectorizer = HashingVectorizer(stop_words='english', non_negative = True)
+X_train = vectorizer.fit_transform(train)
+X_dev = vectorizer.fit_transform(dev)
+
+classifier = LinearSVC(penalty="l1",dual=False, tol=1e-3)
+X = classifier.fit_transform(X_train,train_score)
+#classifier.fit(X_train,train_score)
 
 
-    
