@@ -15,6 +15,13 @@ from sklearn.feature_extraction.text import HashingVectorizer
 from sklearn import svm
 from sklearn.svm import LinearSVC
 
+def binarize(scores, mean):
+    for i in range(len(scores)):
+        if scores[i] >= mean:
+            scores[i] = 1
+        else:
+            scores[i] = -1
+
 # Load pitchfork review corpus as a list of dictionaries
 # Each list entry is a dictionary with the following keys (all values are 
 # string lists):
@@ -27,7 +34,7 @@ from sklearn.svm import LinearSVC
 #   bnm_label: Best New Music/Reissue label.
 #   date: Date of review, of format Month Day, Year
 #   review: Review text.
-p4k_dir = '/home/kathleenkusworo/learn-p4k/data/'
+p4k_dir = '/home/jdjones/repo/learn-p4k/data/p4k/'
 p4k_file = open(p4k_dir + 'p4k-all.json')
 p4k_data = json.load(p4k_file)
 
@@ -35,6 +42,8 @@ test_dev_int = []
 train_int = []
 train = []
 train_score = []
+test_score = []
+dev_score = []
 test_int = []
 dev_int = []
 test = []
@@ -70,11 +79,12 @@ for i in range(len(p4k_data)):
 '''
 
 #pick ~5361 unique integers randomly from 0-16082
-test_dev_int = random.sample(range(len(p4k_data)), int(len(p4k_data)/3))
+test_dev_int = random.sample(range(len(p4k_data)), int(len(p4k_data)/5))
 
 #set the rest to be train integers
 train_int = set(range(len(p4k_data))) - set(test_dev_int)
 train_int = list(train_int)
+train_int = random.sample(train_int, int(len(train_int)*3/8))
 
 #assign the first half as integers for the test set
 for i in range(int(len(test_dev_int)/2)):
@@ -86,31 +96,60 @@ for i in range(int(len(test_dev_int)/2), len(test_dev_int)):
 
 #assign corpus items that are numbered as the integers in test_int into test
 for i in range(len(test_int)):
-    test.append(p4k_data[test_int[i]])
+    cur_item = p4k_data[test_int[i]]  
+    scores = cur_item["score"]
+    if scores:    
+        for j in range(len(scores)):
+            scores[j] = float(scores[j])
+        test.append(cur_item["review"][0])
+        test_score.append(np.mean(scores))
+    else:
+        print("Skipping review: no score")
 
 #assign corpus items that are numbered as the integers in dev_int into dev
 for i in range(len(dev_int)):
-    cur_item = p4k_data[dev_int[i]]   
-    dev.append(cur_item["review"][0])
+    cur_item = p4k_data[dev_int[i]]  
+    scores = cur_item["score"]
+    if scores:    
+        for j in range(len(scores)):
+            scores[j] = float(scores[j])
+        dev.append(cur_item["review"][0])
+        dev_score.append(np.mean(scores))
+    else:
+        print("Skipping review: no score")
 
 #assign reviews of corpus items that are numbered as the integers in train_int into train
 for i in range(len(train_int)):
     #current item is the item in p4k_data numbered as those selected to be in train set
-    cur_item = p4k_data[train_int[i]]   
-    train.append(cur_item["review"][0])
+    cur_item = p4k_data[train_int[i]]  
     scores = cur_item["score"]
-    for j in range(len(scores)):
-        scores[j] = float(scores[j])
-    train_score.append(np.mean(scores))
+    if scores:    
+        for j in range(len(scores)):
+            scores[j] = float(scores[j])
+        train.append(cur_item["review"][0])
+        train_score.append(np.mean(scores))
+    else:
+        print("Skipping review: no score")
 
-#mean = np.average(train_score)
-
+avg = np.mean(train_score)
+binarize(train_score, avg)
+binarize(dev_score, avg)
+binarize(test_score, avg)
+        
 vectorizer = HashingVectorizer(stop_words='english', non_negative = True)
 X_train = vectorizer.fit_transform(train)
 X_dev = vectorizer.fit_transform(dev)
 
 classifier = LinearSVC(penalty="l1",dual=False, tol=1e-3)
-X = classifier.fit_transform(X_train,train_score)
-#classifier.fit(X_train,train_score)
+classifier.fit(X_train,train_score)
+output = classifier.predict(X_dev)
 
+num_correct = 0.0
 
+for i in range(len(dev_score)):
+    if dev_score[i] == output[i]:
+        num_correct += 1
+        
+accuracy = num_correct / len(dev_score)        
+
+print(accuracy)
